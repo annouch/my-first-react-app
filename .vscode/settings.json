@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ea086943-ee40-4237-a1dc-7de6fff35086/resourceGroups/rg-barcelone/providers/Microsoft.Web/sites/my-first-react-app",
+    "appService.deploySubpath": "build"
+}
