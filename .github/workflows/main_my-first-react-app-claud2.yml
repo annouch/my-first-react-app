@@ -1,0 +1,51 @@
+name: Build and deploy React App to Azure Web App - my-first-react-app-claud2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+      # 1️⃣ Checkout le code
+      - uses: actions/checkout@v4
+
+      # 2️⃣ Installer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      # 3️⃣ Installer les dépendances et build React
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      # 4️⃣ Login to Azure via Service Principal
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6966218721134F4BACC68C7B5968CF24 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_23260EF23CDB4C9EB676356A142D988D }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_15273BB87F884326ADEC67AFCDA7F9B6 }}
+
+      # 5️⃣ Déployer le dossier build/ sur Azure
+      - name: Deploy React App to Azure
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'my-first-react-app-claud2'
+          slot-name: 'Production'
+          package: './build'
+
+
+
+
+
+
+
+          
