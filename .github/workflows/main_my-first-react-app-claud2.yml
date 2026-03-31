@@ -1,5 +1,9 @@
+
 name: Build and deploy React App to Azure Web App - my-first-react-app-claud2
 
+permissions:
+  id-token: write
+  contents: read
 on:
   push:
     branches:
