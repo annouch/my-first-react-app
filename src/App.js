@@ -21,7 +21,7 @@ function App() {
         </a> 
         <Hello />*/}
 
-        <Hello nom="Yassine annouch" />
+        <Hello nom="Yassine annouch2" />
       </header>
     </div>
   );
