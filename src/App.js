@@ -23,7 +23,7 @@ function App() {
         </a> 
         <Hello />*/}
 
-        <Hello nom="Yassine" />
+        <Hello nom="Yassine annouch" />
       </header>
     </div>
   );
