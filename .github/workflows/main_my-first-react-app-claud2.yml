@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'my-first-react-app-claud2'
           slot-name: 'Production'
-          package: .
+          package: './build'
           
