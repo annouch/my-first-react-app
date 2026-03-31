@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import { Component } from 'react';
 import Hello from "./components/Hello";
 function App() {
 
@@ -30,7 +28,7 @@ function App() {
 }
 
 /* class Hello extends Component{
-  
+
 
   render(){
     return <h1>Hello world.</h1>
